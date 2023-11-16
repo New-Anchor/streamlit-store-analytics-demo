@@ -12,7 +12,7 @@ def store_bubble_chart(df_target, df_benchmark, df_stores, metric, metric_rename
     df = df.merge(df_stores, on='address_id', how='inner')
 
     df['year_month_dt'] = pd.to_datetime(df['prom_month_nm'].astype(str) + '-' + df['prom_year_num'].astype(str))
-    df['Calendar Month'] = df['year_month_dt'].dt.strftime('%b-%y')
+    df['Calendar Month'] = df['year_month_dt'].dt.strftime('%B-%y')
     df = df.groupby(['address_id', 'Store Name', 'Store Size', 'year_month_dt', 'Calendar Month'])[metric].sum().reset_index()
     df['Target or Benchmark'] = df['address_id'].apply(lambda x: 'Target Store' if x == df_target['address_id'].values[0] else 'Benchmark Store')
 
