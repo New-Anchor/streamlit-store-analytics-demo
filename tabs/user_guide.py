@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 def render_page():
     st.title('User Guide 📖')
@@ -45,6 +44,12 @@ def render_page():
         - Demonstrates that Streamlit can be used as a UI for SQL queries.
         - Useful for non-technical team members who need to regularly pull data where only certain fields need to be changed in an otherwise static query e.g. date range.
         - Schema/table column names have been changed, and you won't find the credentials in the git commit history. 🙃
+        <br></br>
+
+        **🖥️ SQL GUI:**
+        - Not related or linked to any session states. Just demonstrating how Streamlit can be used to empower non-tech users to extract SQL data for themselves.
+        - More input fields for SQL querying.
+        - More dynamic ways of altering a SQL query depending on input parameters.
         """
     , unsafe_allow_html=True
     )
