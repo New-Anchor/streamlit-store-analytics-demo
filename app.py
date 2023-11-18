@@ -7,14 +7,15 @@ from tabs import (
     sales_gp_units_benchmark,
     baskets,
     sales_profile,
-    redshift_interface
+    redshift_interface,
+    sql_gui
 )
 
 
 # Page Config & Emoji
 st.set_page_config(
     layout="wide",
-    page_title="Retailer Analytics",
+    page_title="Store Analytics",
     page_icon="📈"
 )
 
@@ -110,7 +111,9 @@ with st.sidebar:
                  "Baskets",
                  "Sales Profile",
                  "---",
-                 "Redshift Interface"], 
+                 "Redshift Interface",
+                 "---",
+                 "SQL GUI"], 
         icons=["info-circle", 
                "---", 
                "gear-fill", 
@@ -120,7 +123,9 @@ with st.sidebar:
                "cart",
                "boxes",
                "---",
-               "server"],
+               "server",
+               "---",
+               "display"],
         menu_icon="None",
         default_index=2,
         styles={
@@ -206,6 +211,10 @@ try:
             render_no_data_warning()
         else:
             redshift_interface.render_page()
+    
+    if selected_page == "SQL GUI":
+        print("Page Selected -> SQL GUI")
+        sql_gui.render_page()
             
 except KeyError:
     pass
