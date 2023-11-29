@@ -86,7 +86,7 @@ def render_page():
                 
                 **Subsidy Program 1 :** {target_store_info[0]['Subsidy Program 1']} &emsp;&emsp;&emsp;
                 
-                **Subsidy Program 2 :** {target_store_info[0]['Subsidy Program 1']} &emsp;&emsp;&emsp;
+                **Subsidy Program 2 :** {target_store_info[0]['Subsidy Program 2']} &emsp;&emsp;&emsp;
                 """
             )
         st.write("---")
